@@ -1,4 +1,5 @@
 import React from 'react';
+import Kanji from '../AboutPage/Kanji';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -11,6 +12,7 @@ const AboutPage = () => (
       <p>
         This about page is for anyone to read!
       </p>
+      <Kanji/>
     </div>
   </div>
 );
