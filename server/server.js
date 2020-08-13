@@ -12,6 +12,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const projectsRouter = require('./routes/projects.router');
 const stringsRouter = require('./routes/strings.router');
+const kanjiRouter = require('./routes/kanji.router');
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,6 +28,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/projects', projectsRouter);
 app.use('/api/strings', stringsRouter);
+app.use('/api/kanji', kanjiRouter );
 
 // Serve static files
 app.use(express.static('build'));

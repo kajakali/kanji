@@ -80,10 +80,11 @@ function* editAvailableStringInstance(action) {
   }
 }
  */
-function* fetchLevelOneKanji() {
+function* fetchLevelKanji() {
   try {
     //TODO - actually connect to the API
-    const response = yield axios.get('api/strings/all');
+    const response = yield fetch('https://kanjiapi.dev/v1/grade/1')
+    yield console.log("level one kanji", response.data);
     yield put({ type: 'SET_LEVEL_ONE_KANJI', payload: response});
     
   }
@@ -94,7 +95,7 @@ function* fetchLevelOneKanji() {
 
 function* StringSaga() {
 
-  yield takeLatest('FETCH_LEVEL_ONE_KANJI', fetchLevelOneKanji);
+  yield takeLatest('FETCH_LEVEL_KANJI', fetchLevelKanji);
 }
 
 export default StringSaga;
